@@ -1,0 +1,82 @@
+apply plugin: 'com.android.application'
+
+android {
+
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+        exclude 'META-INF/ASL2.0'
+        exclude 'schemaorg_apache_xmlbeans/attribute/**'
+        exclude 'schemaorg_apache_xmlbeans/attributegroup/**'
+        exclude 'schemaorg_apache_xmlbeans/element/**'
+        exclude 'schemaorg_apache_xmlbeans/identityconstraint/**'
+        exclude 'schemaorg_apache_xmlbeans/javaname/**'
+        exclude 'schemaorg_apache_xmlbeans/modelgroup/**'
+        exclude 'schemaorg_apache_xmlbeans/namespace/**'
+        exclude 'schemaorg_apache_xmlbeans/src/**'
+        exclude 'schemaorg_apache_xmlbeans/system/sXML*/**'
+        exclude 'schemaorg_apache_xmlbeans/system/s8C3F193EE11A2F798ACF65489B9E6078/**'
+        exclude 'schemaorg_apache_xmlbeans/type/**'
+
+        exclude 'repackage/**'
+
+        exclude 'LICENSE.txt'
+        exclude 'NOTICE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/maven/**'
+
+    }
+    useLibrary 'org.apache.http.legacy'
+
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    aaptOptions.cruncherEnabled = false
+    aaptOptions.useNewCruncher = false
+    defaultConfig {
+        applicationId "com.example.shardul.jsonparsingusinggson"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled = true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile 'com.android.support:cardview-v7:25.3.1'
+    compile 'com.android.volley:volley:1.0.0'
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+    compile 'com.mcxiaoke.volley:library:1.0.19'
+    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'com.panxw.volley:library:1.0.3'
+    compile 'com.squareup.okhttp3:okhttp:3.3.0'
+
+
+}
